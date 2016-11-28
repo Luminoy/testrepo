@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5dB15lEiyL7jIkXfImhcvUtY"></script>
+	<title>单击获取点击的经纬度</title>
+<link rel="stylesheet" href="/csshide1.css"/>
+<style>#adCard{display:none!important;}#adMainTopLeft{display:none!important;}#adMainTopRight{display:none!important;}#ad_xbox_1{display:none!important;}#ad_xbox_2{display:none!important;}#ad_xbox_3{display:none!important;}#asideLeft{display:none!important;}#asideRight{display:none!important;}#bdyx_float_rb{display:none!important;}#couplet-left{display:none!important;}#couplet-right{display:none!important;}#ec_im_container{display:none!important;}#gamePromo{display:none!important;}#index_banner_top{display:none!important;}#index_right_float{display:none!important;}#index_right_top{display:none!important;}#j-ad-first{display:none!important;}#j-ad-side{display:none!important;}#left-promotion{display:none!important;}#search-union-ad{display:none!important;}#search_bottomad{display:none!important;}#video_push_box{display:none!important;}.adTopImg{display:none!important;}.ec-ad{display:none!important;}.ec_im_container{display:none!important;}.ec_sma_im{display:none!important;}.ec_wise_ad{display:none!important;}.ecomad-banner-loading{display:none!important;}.gg-content{display:none!important;}.intro-adv{display:none!important;}.l-header-ad{display:none!important;}.nav_ads{display:none!important;}.pageLeftFixedAD{display:none!important;}.picad{display:none!important;}.rightAd-skin{display:none!important;}.sam_iebrowser_banner{display:none!important;}.text-advertise{display:none!important;}.top-banner-ad-wrap{display:none!important;}.wapAd{display:none!important;}.wgt-ads{display:none!important;}.aside-ads-container,.ws-tips,#s_wl,#lm,.ecomad-banner-loading,.head-ad,.tran-download-ad,[class*="header-ad"]{display:none!important;}</style >
+<link rel="stylesheet" href="/abprule.css"/>
+<style></style  >
+<style></style>
+<script type="text/javascript">window.onerror=function(){return true;}</script></head>
+<body>
+	<form action="" method="post">
+	   缩放等级：<input name="zoom" type="text" id="zoom" value="">
+	   标注坐标：<input name="points" type="text" id="points" value="">
+	   坐标值：<input name="coords" type="text" id="info" value="">
+	</form>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");            
+	map.centerAndZoom("重庆",12);           
+	//单击获取点击的经纬度
+	map.addEventListener("click",function(e){
+		document.getElementById("info").value = e.point.lng + ", " + e.point.lat;   
+	});
+</script>
